@@ -31,7 +31,7 @@ class DSLRequest(BaseModel):
     dsl_content: str = Field(..., description="DSL 文件内容", min_length=1)
 
 class ChatResponse(BaseModel):
-    response: str
+    response: Dict
     history: List[Dict]
 
 class HistoryResponse(BaseModel):

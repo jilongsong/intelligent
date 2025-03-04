@@ -18,7 +18,7 @@ from langchain.agents import initialize_agent, AgentType
 load_dotenv()
 
 class DSLAssistant:
-    def __init__(self, model_name: str = "deepseek-ai/DeepSeek-V2.5"):
+    def __init__(self, model_name: str = "Qwen/Qwen2.5-72B-Instruct"):
         """初始化 DSL 助手"""
         self.api_key = os.getenv("SF_API_KEY")
         self.api_base = os.getenv("SF_API_BASE_URL")
@@ -33,16 +33,18 @@ class DSLAssistant:
         
         # 创建系统提示词
         system_prompt = """你是一个专业的低代码平台 DSL 助手。你的主要职责是：
-1. 理解用户的 DSL 文件结构
-2. 帮助用户根据自然语言描述修改 DSL
-3. 确保生成的 DSL 符合规范和语法
-4. 提供清晰的修改建议和解释
+1. 理解用户提供的 DSL 结构，并确保修改后保持完整性
+2. 根据用户的自然语言描述精准修改 DSL
+3. 确保返回的 DSL 100% 符合 JSON 语法，避免任何格式错误, **杜绝掺杂注释**
 
-当处理 DSL 时，请遵循以下规则：
-1. 保持 DSL 结构的完整性
-2. 确保修改不会破坏现有的配置
-3. 验证所有必需的字段都存在
-4. 保持良好的格式化
+**重要规则（必须严格遵守）：**
+1. **严禁丢失任何字段**，尤其是 `image`、`src`、`url` 等图片地址和资源路径
+2. **保证 DSL 结构完整**，修改时不可删除未要求删除的字段
+3. **必须返回标准 JSON 格式**，不能包含任何形式的注释（如 `//`、`/* */`、`#`）
+4. **确保 DSL 可用**，不能返回格式错误、字段丢失、重复键名、或结构损坏的 JSON
+5. **确保数据一致性**，特别是图片资源、引用 ID 和层级关系不能被误改
+6. **只返回完整的 JSON**，不能有额外的说明、解释或文本
+7. **DSL 不能被重新格式化为 Markdown 或其他格式**，只能是纯 JSON
 """
         
         # 初始化记忆系统
@@ -88,18 +90,36 @@ class DSLAssistant:
     
     async def process_request(self, user_input: str) -> str:
         """
-        处理用户请求
+        处理用户请求，并返回完整、严格的 DSL JSON 格式（JSON中不允许有注释）
         
         Args:
             user_input: 用户输入的消息
             
         Returns:
-            str: 助手的回复
+            str: 仅包含修改后的完整 DSL JSON
         """
         try:
             # 使用对话链处理请求
             response = await self.chain.ainvoke({"input": user_input})
-            return response["text"]
+            print(response)
+            # return response["text"]
+            raw_output = response["text"]
+            # 提取 JSON 格式的 DSL
+            json_start = raw_output.find("{")
+            json_end = raw_output.rfind("}") + 1
+
+            if json_start == -1 or json_end == -1:
+                return "无法解析 DSL JSON，请检查输入。"
+
+            dsl_json_str = raw_output[json_start:json_end]
+            print(dsl_json_str)
+            # 确保返回合法 JSON
+            modified_dsl = json.loads(dsl_json_str)
+            # 更新当前 DSL 并返回完整 DSL
+            self.current_dsl = modified_dsl
+            print(self.current_dsl)
+            return self.current_dsl
+            
         except Exception as e:
             return f"处理请求时发生错误: {str(e)}"
     
