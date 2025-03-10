@@ -18,10 +18,10 @@ from langchain.agents import initialize_agent, AgentType
 load_dotenv()
 
 class DSLAssistant:
-    def __init__(self, model_name: str = "Qwen/Qwen2.5-72B-Instruct"):
+    def __init__(self, model_name: str = "qwq-32b"):
         """初始化 DSL 助手"""
         self.api_key = os.getenv("SF_API_KEY")
-        self.api_base = os.getenv("SF_API_BASE_URL")
+        self.api_base = "http://192.100.8.139:8080"
         
         # 初始化聊天模型
         self.chat = ChatOpenAI(
@@ -79,6 +79,8 @@ class DSLAssistant:
             bool: 是否成功加载
         """
         try:
+            self.memory.clear()
+            
             self.current_dsl = json.loads(dsl_content)
             # 将 DSL 加载事件添加到对话历史
             self.memory.chat_memory.add_user_message(f"我已经加载了以下 DSL:\n{json.dumps(self.current_dsl, indent=2, ensure_ascii=False)}")
