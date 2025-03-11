@@ -2,164 +2,50 @@
 FastAPI 应用入口
 提供 DSL 智能助手的 API 接口，支持多种模型后端
 """
-from fastapi import FastAPI, HTTPException, Request
-from fastapi.responses import JSONResponse
-from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel, Field
-from typing import List, Dict, Literal
-from dsl_assistant_langchain import DSLAssistant
-from dsl_assistant_api import DSLAssistantAPI
-import uvicorn
-import json
+import os
+import sys
 import logging
+import uvicorn
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
+from app.core.config import settings
+from app.api.endpoints import router
 
 # 配置日志
 logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
+    level=settings.LOG_LEVEL,
+    format=settings.LOG_FORMAT,
+    handlers=[
+        logging.FileHandler(settings.LOG_FILE)
+    ]
 )
+
+# 重定向标准输出和标准错误到日志文件
+sys.stdout = open(settings.LOG_FILE, 'a')
+sys.stderr = open(settings.LOG_FILE, 'a')
+
 logger = logging.getLogger(__name__)
 
-app = FastAPI(title="DSL 智能助手")
+app = FastAPI(title=settings.PROJECT_NAME)
 
 # 添加 CORS 支持
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=settings.BACKEND_CORS_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# 初始化两个版本的助手
-langchain_assistant = DSLAssistant()
-api_assistant = DSLAssistantAPI()
-
-class ChatRequest(BaseModel):
-    message: str = Field(..., description="用户的输入消息", min_length=1)
-    version: Literal["langchain", "api"] = Field(
-        default="api",
-        description="使用的助手版本：langchain（LangChain版本）或api（直接API调用版本）"
-    )
-
-class DSLRequest(BaseModel):
-    dsl_content: str = Field(..., description="DSL 文件内容", min_length=1)
-    version: Literal["langchain", "api"] = Field(
-        default="api",
-        description="使用的助手版本：langchain（LangChain版本）或api（直接API调用版本）"
-    )
-
-class ChatResponse(BaseModel):
-    response: Dict
-    history: List[Dict]
-
-class HistoryResponse(BaseModel):
-    history: List[Dict]
-
-def get_assistant(version: str):
-    """根据版本获取对应的助手实例"""
-    if version == "langchain":
-        return langchain_assistant
-    return api_assistant
-
-@app.exception_handler(Exception)
-async def global_exception_handler(request: Request, exc: Exception):
-    """全局异常处理"""
-    logger.error(f"发生错误: {str(exc)}", exc_info=True)
-    return JSONResponse(
-        status_code=500,
-        content={"detail": f"服务器错误: {str(exc)}"}
-    )
-
-@app.exception_handler(json.JSONDecodeError)
-async def json_exception_handler(request: Request, exc: json.JSONDecodeError):
-    """JSON 解析错误处理"""
-    logger.error(f"JSON解析错误: {str(exc)}")
-    return JSONResponse(
-        status_code=400,
-        content={"detail": f"JSON 格式错误: {str(exc)}"}
-    )
-
-@app.post("/chat", response_model=ChatResponse)
-async def chat(request: ChatRequest):
-    """
-    处理用户聊天请求
-    
-    请求示例:
-    {
-        "message": "你好，请帮我分析一下当前的 DSL 结构",
-        "version": "api"  // 可选，默认使用api版本
-    }
-    """
-    try:
-        logger.info(f"收到聊天请求，使用{request.version}版本")
-        assistant = get_assistant(request.version)
-        response = await assistant.process_request(request.message)
-        history = assistant.get_chat_history()
-        return ChatResponse(response=response, history=history)
-    except Exception as e:
-        logger.error(f"处理聊天请求时出错: {str(e)}", exc_info=True)
-        raise HTTPException(status_code=500, detail=str(e))
-
-@app.post("/load_dsl")
-async def load_dsl(request: DSLRequest):
-    """
-    加载 DSL 文件
-    
-    请求示例:
-    {
-        "dsl_content": "{\"type\": \"container\", \"children\": []}",
-        "version": "api"  // 可选，默认使用api版本
-    }
-    """
-    try:
-        logger.info(f"收到加载DSL请求，使用{request.version}版本")
-        assistant = get_assistant(request.version)
-        success = assistant.load_dsl(request.dsl_content)
-        if not success:
-            raise HTTPException(status_code=400, detail="DSL 格式无效")
-        return {"message": "DSL 加载成功"}
-    except json.JSONDecodeError as e:
-        logger.error(f"DSL JSON解析错误: {str(e)}")
-        raise HTTPException(status_code=400, detail=f"DSL JSON 格式错误: {str(e)}")
-    except Exception as e:
-        logger.error(f"加载DSL时出错: {str(e)}", exc_info=True)
-        raise HTTPException(status_code=500, detail=str(e))
-
-@app.get("/history")
-async def get_history(version: Literal["langchain", "api"] = "api"):
-    """
-    获取对话历史记录
-    
-    参数:
-    - version: 使用的助手版本，可选值：langchain或api，默认为api
-    """
-    try:
-        logger.info(f"获取历史记录，使用{version}版本")
-        assistant = get_assistant(version)
-        history = assistant.get_chat_history()
-        return HistoryResponse(history=history)
-    except Exception as e:
-        logger.error(f"获取历史记录时出错: {str(e)}", exc_info=True)
-        raise HTTPException(status_code=500, detail=str(e))
-
-@app.post("/clear_history")
-async def clear_history(version: Literal["langchain", "api"] = "api"):
-    """
-    清空对话历史
-    
-    参数:
-    - version: 使用的助手版本，可选值：langchain或api，默认为api
-    """
-    try:
-        logger.info(f"清空历史记录，使用{version}版本")
-        assistant = get_assistant(version)
-        assistant.clear_history()
-        return {"message": "历史记录已清空"}
-    except Exception as e:
-        logger.error(f"清空历史记录时出错: {str(e)}", exc_info=True)
-        raise HTTPException(status_code=500, detail=str(e))
+# 注册路由
+app.include_router(router)  # 移除prefix，直接使用根路径
 
 if __name__ == "__main__":
-    logger.info("启动DSL智能助手服务...")
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    logger.info(f"启动{settings.PROJECT_NAME}服务...")
+    uvicorn.run(
+        app,
+        host=os.getenv("HOST", "127.0.0.1"),  # 修改默认host为localhost
+        port=int(os.getenv("PORT", 8000)),
+        log_config=None  # 禁用uvicorn的默认日志配置
+    )

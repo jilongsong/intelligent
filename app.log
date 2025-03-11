@@ -1,0 +1,753 @@
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\logging\__init__.py", line 1153, in emit
+    stream.write(msg + self.terminator)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+Call stack:
+  File "C:\workspace\intelligent\main.py", line 45, in <module>
+    logger.info(f"Æô¶¯{settings.PROJECT_NAME}·þÎñ...")
+Message: 'Æô¶¯DSL ÖÇÄÜÖúÊÖ·þÎñ...'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\logging\__init__.py", line 1153, in emit
+    stream.write(msg + self.terminator)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+Call stack:
+  File "C:\workspace\intelligent\main.py", line 46, in <module>
+    uvicorn.run(
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\server.py", line 66, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 712, in run_until_complete
+    self.run_forever()
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 683, in run_forever
+    self._run_once()
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 2040, in _run_once
+    handle._run()
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\server.py", line 70, in serve
+    await self._serve(sockets)
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\server.py", line 83, in _serve
+    logger.info(message, process_id, extra={"color_message": color_message})
+Message: 'Started server process [%d]'
+Arguments: (26808,)
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\logging\__init__.py", line 1153, in emit
+    stream.write(msg + self.terminator)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+Call stack:
+  File "C:\workspace\intelligent\main.py", line 46, in <module>
+    uvicorn.run(
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\server.py", line 66, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 712, in run_until_complete
+    self.run_forever()
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 683, in run_forever
+    self._run_once()
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 2040, in _run_once
+    handle._run()
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\server.py", line 70, in serve
+    await self._serve(sockets)
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\server.py", line 85, in _serve
+    await self.startup(sockets=sockets)
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\server.py", line 96, in startup
+    await self.lifespan.startup()
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\lifespan\on.py", line 48, in startup
+    self.logger.info("Waiting for application startup.")
+Message: 'Waiting for application startup.'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\logging\__init__.py", line 1153, in emit
+    stream.write(msg + self.terminator)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+Call stack:
+  File "C:\workspace\intelligent\main.py", line 46, in <module>
+    uvicorn.run(
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\server.py", line 66, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 712, in run_until_complete
+    self.run_forever()
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 683, in run_forever
+    self._run_once()
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 2040, in _run_once
+    handle._run()
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\server.py", line 70, in serve
+    await self._serve(sockets)
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\server.py", line 85, in _serve
+    await self.startup(sockets=sockets)
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\server.py", line 96, in startup
+    await self.lifespan.startup()
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\lifespan\on.py", line 62, in startup
+    self.logger.info("Application startup complete.")
+Message: 'Application startup complete.'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\server.py", line 163, in startup
+    server = await loop.create_server(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1622, in create_server
+    raise OSError(err.errno, msg) from None
+OSError: [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8000): [winerror 10048] Í¨³£Ã¿¸öÌ×½Ó×ÖµØÖ·(Ð­Òé/ÍøÂçµØÖ·/¶Ë¿Ú)Ö»ÔÊÐíÊ¹ÓÃÒ»´Î¡£
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\logging\__init__.py", line 1153, in emit
+    stream.write(msg + self.terminator)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+Call stack:
+  File "C:\workspace\intelligent\main.py", line 46, in <module>
+    uvicorn.run(
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\server.py", line 66, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 712, in run_until_complete
+    self.run_forever()
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 683, in run_forever
+    self._run_once()
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 2040, in _run_once
+    handle._run()
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\server.py", line 70, in serve
+    await self._serve(sockets)
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\server.py", line 85, in _serve
+    await self.startup(sockets=sockets)
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\server.py", line 171, in startup
+    logger.error(exc)
+Message: OSError(10048, "error while attempting to bind on address ('127.0.0.1', 8000): [winerror 10048] Í¨³£Ã¿¸öÌ×½Ó×ÖµØÖ·(Ð­Òé/ÍøÂçµØÖ·/¶Ë¿Ú)Ö»ÔÊÐíÊ¹ÓÃÒ»´Î¡£")
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\server.py", line 163, in startup
+    server = await loop.create_server(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1622, in create_server
+    raise OSError(err.errno, msg) from None
+OSError: [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8000): [winerror 10048] Í¨³£Ã¿¸öÌ×½Ó×ÖµØÖ·(Ð­Òé/ÍøÂçµØÖ·/¶Ë¿Ú)Ö»ÔÊÐíÊ¹ÓÃÒ»´Î¡£
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\logging\__init__.py", line 1153, in emit
+    stream.write(msg + self.terminator)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+Call stack:
+  File "C:\workspace\intelligent\main.py", line 46, in <module>
+    uvicorn.run(
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\server.py", line 66, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 712, in run_until_complete
+    self.run_forever()
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 683, in run_forever
+    self._run_once()
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 2040, in _run_once
+    handle._run()
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\server.py", line 70, in serve
+    await self._serve(sockets)
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\server.py", line 85, in _serve
+    await self.startup(sockets=sockets)
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\server.py", line 172, in startup
+    await self.lifespan.shutdown()
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\lifespan\on.py", line 67, in shutdown
+    self.logger.info("Waiting for application shutdown.")
+Message: 'Waiting for application shutdown.'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\server.py", line 163, in startup
+    server = await loop.create_server(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1622, in create_server
+    raise OSError(err.errno, msg) from None
+OSError: [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8000): [winerror 10048] Í¨³£Ã¿¸öÌ×½Ó×ÖµØÖ·(Ð­Òé/ÍøÂçµØÖ·/¶Ë¿Ú)Ö»ÔÊÐíÊ¹ÓÃÒ»´Î¡£
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\logging\__init__.py", line 1153, in emit
+    stream.write(msg + self.terminator)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+Call stack:
+  File "C:\workspace\intelligent\main.py", line 46, in <module>
+    uvicorn.run(
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\main.py", line 579, in run
+    server.run()
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\server.py", line 66, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 712, in run_until_complete
+    self.run_forever()
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 683, in run_forever
+    self._run_once()
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 2040, in _run_once
+    handle._run()
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\server.py", line 70, in serve
+    await self._serve(sockets)
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\server.py", line 85, in _serve
+    await self.startup(sockets=sockets)
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\server.py", line 172, in startup
+    await self.lifespan.shutdown()
+  File "C:\Users\songj\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\lifespan\on.py", line 76, in shutdown
+    self.logger.info("Application shutdown complete.")
+Message: 'Application shutdown complete.'
+Arguments: ()
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mSystem: ÄãÊÇÒ»¸ö×¨ÒµµÄµÍ´úÂëÆ½Ì¨ DSL ÖúÊÖ¡£ÄãµÄÖ÷ÒªÖ°ÔðÊÇ£º
+1. Àí½âÓÃ»§Ìá¹©µÄ DSL ½á¹¹£¬²¢È·±£ÐÞ¸Äºó±£³ÖÍêÕûÐÔ
+2. ¸ù¾ÝÓÃ»§µÄ×ÔÈ»ÓïÑÔÃèÊö¾«×¼ÐÞ¸Ä DSL
+3. È·±£·µ»ØµÄ DSL 100% ·ûºÏ JSON Óï·¨£¬±ÜÃâÈÎºÎ¸ñÊ½´íÎó
+
+**ÖØÒª¹æÔò£º**
+1. Èç¹ûÓÃ»§ÒªÇóÐÞ¸ÄDSL£¬Äã±ØÐë·µ»ØÍêÕûµÄJSON¸ñÊ½DSL
+2. Èç¹ûÊÇÆÕÍ¨¶Ô»°£¨ÈçÑ¯ÎÊ¡¢·ÖÎöµÈ£©£¬ÄãÓ¦¸Ã·µ»ØÆÕÍ¨ÎÄ±¾
+3. ÑÏ½ûÔÚJSONÖÐÌí¼ÓÈÎºÎ×¢ÊÍ
+4. È·±£·µ»ØµÄJSONÖÐËùÓÐ×Ö¶ÎÍêÕûÇÒÕýÈ·
+
+**´¦ÀíÔ­Ôò£º**
+1. ÐÞ¸ÄDSLÊ±£º·µ»ØÍêÕûµÄJSON£¬²»ÒªÓÐÈÎºÎ¶îÍâËµÃ÷
+2. ÆÕÍ¨¶Ô»°Ê±£º·µ»ØÇåÎúµÄÎÄ±¾ÃèÊö£¬²»Òª°üº¬JSON
+3. ·ÖÎöDSLÊ±£º·µ»Ø½á¹¹»¯µÄÎÄ±¾ÃèÊö£¬²»Òª°üº¬JSON
+
+Human: ÎÒÒÑ¾­¼ÓÔØÁËÒÔÏÂ DSL:
+{
+  "id": "edoms_container_b2464632",
+  "type": "container",
+  "layout": "absolute",
+  "style": {
+    "width": 470,
+    "height": 321,
+    "visibility": "inherit",
+    "backgroundColor": "#fff",
+    "borderColor": "#fff",
+    "borderWidth": "0px",
+    "borderRadius": "12px",
+    "borderStyle": "solid",
+    "zIndex": "inherit",
+    "position": "absolute",
+    "top": 143.50008716507693,
+    "left": 20.99999999999997,
+    "right": "",
+    "bottom": "",
+    "padding": "",
+    "margin": "",
+    "boxShadow": "",
+    "background": "rgba(22, 25, 57, 1)",
+    "backgroundImage": "",
+    "backgroundRepeat": "",
+    "background-size": "",
+    "cursor": ""
+  },
+  "name": "×é",
+  "saveId": "1762733537001005058",
+  "componentType": 3,
+  "inputEvent": {
+    "isTrusted": true,
+    "_vts": 1740034297426
+  },
+  "dataSource": "",
+  "events": []
+}
+AI: DSL ÒÑ³É¹¦¼ÓÔØ£¬ÎÒ¿ÉÒÔ°ïÄú·ÖÎöºÍÐÞ¸ÄËü¡£
+Human: ÐÞ¸Ä±³¾°ÎªºìÉ«[0m
+
+[1m> Finished chain.[0m
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mSystem: ÄãÊÇÒ»¸ö×¨ÒµµÄµÍ´úÂëÆ½Ì¨ DSL ÖúÊÖ¡£ÄãµÄÖ÷ÒªÖ°ÔðÊÇ£º
+1. Àí½âÓÃ»§Ìá¹©µÄ DSL ½á¹¹£¬²¢È·±£ÐÞ¸Äºó±£³ÖÍêÕûÐÔ
+2. ¸ù¾ÝÓÃ»§µÄ×ÔÈ»ÓïÑÔÃèÊö¾«×¼ÐÞ¸Ä DSL
+3. È·±£·µ»ØµÄ DSL 100% ·ûºÏ JSON Óï·¨£¬±ÜÃâÈÎºÎ¸ñÊ½´íÎó
+
+**ÖØÒª¹æÔò£º**
+1. Èç¹ûÓÃ»§ÒªÇóÐÞ¸ÄDSL£¬Äã±ØÐë·µ»ØÍêÕûµÄJSON¸ñÊ½DSL
+2. Èç¹ûÊÇÆÕÍ¨¶Ô»°£¨ÈçÑ¯ÎÊ¡¢·ÖÎöµÈ£©£¬ÄãÓ¦¸Ã·µ»ØÆÕÍ¨ÎÄ±¾
+3. ÑÏ½ûÔÚJSONÖÐÌí¼ÓÈÎºÎ×¢ÊÍ
+4. È·±£·µ»ØµÄJSONÖÐËùÓÐ×Ö¶ÎÍêÕûÇÒÕýÈ·
+
+**´¦ÀíÔ­Ôò£º**
+1. ÐÞ¸ÄDSLÊ±£º·µ»ØÍêÕûµÄJSON£¬²»ÒªÓÐÈÎºÎ¶îÍâËµÃ÷
+2. ÆÕÍ¨¶Ô»°Ê±£º·µ»ØÇåÎúµÄÎÄ±¾ÃèÊö£¬²»Òª°üº¬JSON
+3. ·ÖÎöDSLÊ±£º·µ»Ø½á¹¹»¯µÄÎÄ±¾ÃèÊö£¬²»Òª°üº¬JSON
+
+Human: ÎÒÒÑ¾­¼ÓÔØÁËÒÔÏÂ DSL:
+{
+  "id": "edoms_container_e5264fd6",
+  "type": "container",
+  "layout": "absolute",
+  "style": {
+    "width": 470,
+    "height": 377,
+    "visibility": "inherit",
+    "backgroundColor": "#fff",
+    "borderColor": "#fff",
+    "borderWidth": "0px",
+    "borderRadius": "12px",
+    "borderStyle": "solid",
+    "zIndex": "inherit",
+    "position": "absolute",
+    "top": 488,
+    "left": 20,
+    "right": "",
+    "bottom": "",
+    "padding": "",
+    "margin": "",
+    "boxShadow": "",
+    "background": "rgba(22, 25, 57, 1)",
+    "backgroundImage": "",
+    "backgroundRepeat": "",
+    "background-size": "",
+    "cursor": ""
+  },
+  "name": "×é",
+  "saveId": "1762733537001005058",
+  "componentType": 3,
+  "inputEvent": {
+    "isTrusted": true,
+    "_vts": 1740034297426
+  },
+  "dataSource": "",
+  "events": []
+}
+AI: DSL ÒÑ³É¹¦¼ÓÔØ£¬ÎÒ¿ÉÒÔ°ïÄú·ÖÎöºÍÐÞ¸ÄËü¡£
+Human: ÐÞ¸Ä±³¾°ÎªÂÌÉ«[0m
+
+[1m> Finished chain.[0m
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mSystem: ÄãÊÇÒ»¸ö×¨ÒµµÄµÍ´úÂëÆ½Ì¨ DSL ÖúÊÖ¡£ÄãµÄÖ÷ÒªÖ°ÔðÊÇ£º
+1. Àí½âÓÃ»§Ìá¹©µÄ DSL ½á¹¹£¬²¢È·±£ÐÞ¸Äºó±£³ÖÍêÕûÐÔ
+2. ¸ù¾ÝÓÃ»§µÄ×ÔÈ»ÓïÑÔÃèÊö¾«×¼ÐÞ¸Ä DSL
+3. È·±£·µ»ØµÄ DSL 100% ·ûºÏ JSON Óï·¨£¬±ÜÃâÈÎºÎ¸ñÊ½´íÎó
+
+**ÖØÒª¹æÔò£º**
+1. Èç¹ûÓÃ»§ÒªÇóÐÞ¸ÄDSL£¬Äã±ØÐë·µ»ØÍêÕûµÄJSON¸ñÊ½DSL
+2. Èç¹ûÊÇÆÕÍ¨¶Ô»°£¨ÈçÑ¯ÎÊ¡¢·ÖÎöµÈ£©£¬ÄãÓ¦¸Ã·µ»ØÆÕÍ¨ÎÄ±¾
+3. ÑÏ½ûÔÚJSONÖÐÌí¼ÓÈÎºÎ×¢ÊÍ
+4. È·±£·µ»ØµÄJSONÖÐËùÓÐ×Ö¶ÎÍêÕûÇÒÕýÈ·
+
+**´¦ÀíÔ­Ôò£º**
+1. ÐÞ¸ÄDSLÊ±£º·µ»ØÍêÕûµÄJSON£¬²»ÒªÓÐÈÎºÎ¶îÍâËµÃ÷
+2. ÆÕÍ¨¶Ô»°Ê±£º·µ»ØÇåÎúµÄÎÄ±¾ÃèÊö£¬²»Òª°üº¬JSON
+3. ·ÖÎöDSLÊ±£º·µ»Ø½á¹¹»¯µÄÎÄ±¾ÃèÊö£¬²»Òª°üº¬JSON
+
+Human: ÎÒÒÑ¾­¼ÓÔØÁËÒÔÏÂ DSL:
+{
+  "id": "edoms_container_15f96260",
+  "type": "container",
+  "layout": "absolute",
+  "style": {
+    "width": 1872,
+    "height": 168,
+    "visibility": "inherit",
+    "backgroundColor": "#fff",
+    "borderColor": "#fff",
+    "borderWidth": "0px",
+    "borderRadius": "12px",
+    "borderStyle": "solid",
+    "zIndex": "inherit",
+    "position": "absolute",
+    "top": 892,
+    "left": 21,
+    "right": "",
+    "bottom": "",
+    "padding": "",
+    "margin": "",
+    "boxShadow": "",
+    "background": "rgba(22, 25, 57, 1)",
+    "backgroundImage": "",
+    "backgroundRepeat": "",
+    "background-size": "",
+    "cursor": ""
+  },
+  "name": "×é",
+  "saveId": "1762733537001005058",
+  "componentType": 3,
+  "inputEvent": {
+    "isTrusted": true,
+    "_vts": 1740034297426
+  },
+  "dataSource": "",
+  "events": []
+}
+AI: DSL ÒÑ³É¹¦¼ÓÔØ£¬ÎÒ¿ÉÒÔ°ïÄú·ÖÎöºÍÐÞ¸ÄËü¡£
+Human: ÐÞ¸Ä±³¾°Îª×ÏÉ«[0m
+
+[1m> Finished chain.[0m
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mSystem: ÄãÊÇÒ»¸ö×¨ÒµµÄµÍ´úÂëÆ½Ì¨ DSL ÖúÊÖ¡£ÄãµÄÖ÷ÒªÖ°ÔðÊÇ£º
+1. Àí½âÓÃ»§Ìá¹©µÄ DSL ½á¹¹£¬²¢È·±£ÐÞ¸Äºó±£³ÖÍêÕûÐÔ
+2. ¸ù¾ÝÓÃ»§µÄ×ÔÈ»ÓïÑÔÃèÊö¾«×¼ÐÞ¸Ä DSL
+3. È·±£·µ»ØµÄ DSL 100% ·ûºÏ JSON Óï·¨£¬±ÜÃâÈÎºÎ¸ñÊ½´íÎó
+
+**ÖØÒª¹æÔò£º**
+1. Èç¹ûÓÃ»§ÒªÇóÐÞ¸ÄDSL£¬Äã±ØÐë·µ»ØÍêÕûµÄJSON¸ñÊ½DSL
+2. Èç¹ûÊÇÆÕÍ¨¶Ô»°£¨ÈçÑ¯ÎÊ¡¢·ÖÎöµÈ£©£¬ÄãÓ¦¸Ã·µ»ØÆÕÍ¨ÎÄ±¾
+3. ÑÏ½ûÔÚJSONÖÐÌí¼ÓÈÎºÎ×¢ÊÍ
+4. È·±£·µ»ØµÄJSONÖÐËùÓÐ×Ö¶ÎÍêÕûÇÒÕýÈ·
+
+**´¦ÀíÔ­Ôò£º**
+1. ÐÞ¸ÄDSLÊ±£º·µ»ØÍêÕûµÄJSON£¬²»ÒªÓÐÈÎºÎ¶îÍâËµÃ÷
+2. ÆÕÍ¨¶Ô»°Ê±£º·µ»ØÇåÎúµÄÎÄ±¾ÃèÊö£¬²»Òª°üº¬JSON
+3. ·ÖÎöDSLÊ±£º·µ»Ø½á¹¹»¯µÄÎÄ±¾ÃèÊö£¬²»Òª°üº¬JSON
+
+Human: ÎÒÒÑ¾­¼ÓÔØÁËÒÔÏÂ DSL:
+{
+  "id": "edoms_charts_e8a3b209",
+  "type": "charts",
+  "style": {
+    "visibility": "inherit",
+    "width": "100%",
+    "height": 267,
+    "backgroundColor": "rgba(255,255,255,0)",
+    "position": "absolute",
+    "top": "50",
+    "left": "",
+    "right": "",
+    "bottom": "",
+    "padding": "",
+    "margin": "",
+    "borderColor": "",
+    "borderWidth": "",
+    "borderRadius": "",
+    "boxShadow": "",
+    "borderStyle": "",
+    "backgroundImage": "",
+    "backgroundRepeat": "",
+    "background-size": ""
+  },
+  "name": "Í¼±í",
+  "backgroundColor": "rgba(255,255,255,0)",
+  "grid": {
+    "top": "10%",
+    "left": "6%",
+    "right": "5%",
+    "bottom": "10%"
+  },
+  "title": {
+    "text": "Ò»¼¶±êÌâ",
+    "subtext": "¶þ¼¶±êÌâ",
+    "show": false,
+    "left": "center"
+  },
+  "xAxis": {
+    "type": "category",
+    "axisTick": {
+      "show": false
+    },
+    "axisLine": {
+      "show": false
+    },
+    "source": "acquisition",
+    "field": "name",
+    "data": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat",
+      "Sun"
+    ]
+  },
+  "yAxis": [
+    {
+      "type": "value",
+      "name": "MPa",
+      "position": "left",
+      "axisLine": {
+        "show": true,
+        "lineStyle": {
+          "color": ""
+        }
+      },
+      "axisTick": {
+        "show": false
+      },
+      "splitLine": {
+        "show": true,
+        "lineStyle": {
+          "color": "rgba(92, 86, 86, 0.78)",
+          "opacity": 0.8,
+          "type": "dashed",
+          "width": 1
+        }
+      }
+    },
+    {
+      "type": "value",
+      "name": "",
+      "position": "right",
+      "axisLine": {
+        "show": false,
+        "lineStyle": {
+          "color": ""
+        }
+      },
+      "axisTick": {
+        "show": false
+      },
+      "splitLine": {
+        "show": false,
+        "lineStyle": {
+          "color": "#ccc",
+          "opacity": 0.2,
+          "type": "dashed",
+          "width": 1
+        }
+      }
+    }
+  ],
+  "legend": {
+    "show": true,
+    "itemWidth": 10,
+    "itemHeight": 10,
+    "itemGap": 30,
+    "icon": "roundRect",
+    "left": "center",
+    "top": "top"
+  },
+  "dataSource": [
+    {
+      "name": "00:00",
+      "test1": 40.5,
+      "test2": 3.2
+    },
+    {
+      "name": "01:00",
+      "test1": 41,
+      "test2": 3.5
+    },
+    {
+      "name": "02:00",
+      "test1": 42.5,
+      "test2": 3.8
+    },
+    {
+      "name": "03:00",
+      "test1": 43,
+      "test2": 4
+    },
+    {
+      "name": "04:00",
+      "test1": 44.5,
+      "test2": 4.2
+    },
+    {
+      "name": "05:00",
+      "test1": 45,
+      "test2": 4.5
+    },
+    {
+      "name": "06:00",
+      "test1": 46.5,
+      "test2": 4.8
+    },
+    {
+      "name": "07:00",
+      "test1": 47,
+      "test2": 5
+    },
+    {
+      "name": "08:00",
+      "test1": 48.5,
+      "test2": 5.2
+    },
+    {
+      "name": "09:00",
+      "test1": 49,
+      "test2": 5.5
+    },
+    {
+      "name": "10:00",
+      "test1": 50.5,
+      "test2": 5.8
+    },
+    {
+      "name": "11:00",
+      "test1": 51,
+      "test2": 6
+    },
+    {
+      "name": "12:00",
+      "test1": 52.5,
+      "test2": 6.2
+    },
+    {
+      "name": "13:00",
+      "test1": 53,
+      "test2": 6.5
+    },
+    {
+      "name": "14:00",
+      "test1": 54.5,
+      "test2": 6.8
+    },
+    {
+      "name": "15:00",
+      "test1": 55,
+      "test2": 7
+    },
+    {
+      "name": "16:00",
+      "test1": 56.5,
+      "test2": 7.2
+    },
+    {
+      "name": "17:00",
+      "test1": 57,
+      "test2": 7.5
+    },
+    {
+      "name": "18:00",
+      "test1": 58.5,
+      "test2": 7.8
+    },
+    {
+      "name": "19:00",
+      "test1": 59,
+      "test2": 8
+    },
+    {
+      "name": "20:00",
+      "test1": 60.5,
+      "test2": 8.2
+    },
+    {
+      "name": "21:00",
+      "test1": 61,
+      "test2": 8.5
+    },
+    {
+      "name": "22:00",
+      "test1": 62.5,
+      "test2": 8.8
+    },
+    {
+      "name": "23:00",
+      "test1": 63,
+      "test2": 9
+    }
+  ],
+  "configs": [
+    {
+      "name": "Ë²Ê±ÈÈÁ¿",
+      "propLabel": "test1",
+      "type": "line",
+      "yAxisIndex": 0,
+      "symbol": "none",
+      "smooth": true,
+      "symbolSize": 16,
+      "radius": "60%,80%",
+      "pieColors": "",
+      "barMaxWidth": 40,
+      "color": "rgba(38, 138, 255, 1)",
+      "label": {
+        "show": false,
+        "position": "outside"
+      },
+      "labelLine": {
+        "show": true
+      },
+      "showAreaStyle": false,
+      "colorStops": [
+        {
+          "color": "rgba(108, 20, 241, 1)"
+        },
+        {
+          "color": "rgba(108, 20, 241, 0)"
+        }
+      ],
+      "itemStyle": {
+        "borderColor": "",
+        "borderWidth": 0,
+        "borderType": "",
+        "color": "",
+        "color0": "",
+        "borderColor0": ""
+      },
+      "isStack": false
+    }
+  ],
+  "vertical": false,
+  "tooltipStyle": {
+    "backgroundColor": "#0000006b",
+    "titleColor": "#fff",
+    "labelColor": "#fff",
+    "unitColor": "#fff",
+    "fontSize": 12
+  },
+  "events": []
+}
+AI: DSL ÒÑ³É¹¦¼ÓÔØ£¬ÎÒ¿ÉÒÔ°ïÄú·ÖÎöºÍÐÞ¸ÄËü¡£
+Human: »»Ò»×éÊý¾Ý£¬Êý¾ÝÓÉÄãÀ´Éú³É[0m
